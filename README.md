@@ -78,7 +78,7 @@ CrackSpot/
 
 ## Chạy bằng notebook chính
 
-Mở [`CrackSpot.ipynb`](CrackSpot.ipynb) bằng VS Code/Jupyter và chạy từ trên xuống. Chỉ cần sửa cell **THAM SỐ ĐIỀU KHIỂN**; các cờ `DO_*` mặc định đều tắt nên không tự train hay mở final test. Notebook là bản triển khai độc lập: toàn bộ code tải/kiểm tra dữ liệu, pipeline, MobileNetV2, E1-E5, final test, Grad-CAM, benchmark, ảnh tự chụp và demo đều được trình bày trực tiếp trong các cell; notebook không import `crackspot` và không gọi `scripts/`.
+Mở [`CrackSpot.ipynb`](CrackSpot.ipynb) bằng VS Code/Jupyter và chạy từ trên xuống. Cấu hình mặc định dành cho Colab sẽ tự tải dữ liệu nếu thiếu, huấn luyện tuần tự E1-E4 và khóa threshold E5; Final Test vẫn mặc định khóa. Notebook là bản triển khai độc lập: toàn bộ code tải/kiểm tra dữ liệu, pipeline, MobileNetV2, E1-E5, final test, Grad-CAM, benchmark, ảnh tự chụp và demo đều được trình bày trực tiếp trong các cell; notebook không import `crackspot` và không gọi `scripts/`.
 
 Trên Colab, mở chính file `CrackSpot.ipynb`; URL repository và chế độ clone/cài dependency tự động đã được cấu hình sẵn. Chỉ cần bật `DO_DOWNLOAD_SDNET2018`, sau đó chạy từ trên xuống. Notebook clone repository để nhận locked manifests vào `/content/CrackSpot`; code chạy vẫn nằm trọn trong notebook. Archive/ảnh SDNET2018 không đẩy lên Git mà được tải từ nguồn chính thức, xác minh MD5 rồi giải nén trong runtime. `INSTALL_DEPENDENCIES=None` nghĩa là tự cài trên Colab và không tự cài ở local.
 
