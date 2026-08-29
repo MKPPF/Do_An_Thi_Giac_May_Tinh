@@ -160,7 +160,11 @@ demo:
   allowed_extensions: [jpg, jpeg, png]
 
 environment_target:
-  python: "3.12"
-  tensorflow: "2.19.0"
+  supported_python: "3.10-3.13"
+  windows_python: "3.12"
+  colab_python: "3.13"
+  tensorflow_by_python:
+    "3.10-3.12": "2.19.0"
+    "3.13": "2.21.0"
   windows_native_accelerator: CPU
   gpu_training: Colab_or_WSL2

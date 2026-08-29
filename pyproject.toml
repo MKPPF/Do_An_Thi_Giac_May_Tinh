@@ -7,7 +7,7 @@ name = "crackspot"
 version = "0.1.0"
 description = "Reproducible MobileNetV2 surface-crack classification and Grad-CAM demo"
 readme = "README.md"
-requires-python = ">=3.10,<3.13"
+requires-python = ">=3.10,<3.14"
 license = { text = "MIT" }
 authors = [
   { name = "CrackSpot - DHKHMT19CTT Nhom 6" },
@@ -22,8 +22,10 @@ dependencies = [
 
 [project.optional-dependencies]
 train = [
-  "tensorflow==2.19.0",
-  "h5py==3.16.0",
+  "tensorflow==2.19.0; python_version < '3.13'",
+  "tensorflow==2.21.0; python_version >= '3.13'",
+  "h5py==3.16.0; python_version < '3.13'",
+  "h5py==3.14.0; python_version >= '3.13'",
   "matplotlib==3.10.9",
   "seaborn==0.13.2",
   "opencv-python-headless==4.11.0.86",
@@ -31,8 +33,10 @@ train = [
   "psutil==7.0.0",
 ]
 demo = [
-  "tensorflow==2.19.0",
-  "h5py==3.16.0",
+  "tensorflow==2.19.0; python_version < '3.13'",
+  "tensorflow==2.21.0; python_version >= '3.13'",
+  "h5py==3.16.0; python_version < '3.13'",
+  "h5py==3.14.0; python_version >= '3.13'",
   "streamlit==1.49.1",
   "matplotlib==3.10.9",
 ]

@@ -89,12 +89,12 @@ Cell inventory hiển thị toàn bộ tệp source/config/docs/manifests, trạ
 | Môi trường | Python | TensorFlow | Gia tốc |
 |---|---:|---:|---|
 | Windows 10/11 native | 3.12 | 2.19.0 | CPU |
-| Google Colab | runtime tương thích notebook | 2.19.0 theo file pin | GPU do Colab cung cấp |
+| Google Colab | 3.13 | 2.21.0 | GPU do Colab cung cấp |
 | WSL2 Ubuntu | 3.12 | 2.19.0 | GPU khi driver/runtime tương thích |
 
 TensorFlow native Windows sau 2.10 không hỗ trợ GPU chính thức; dùng WSL2 hoặc Colab nếu cần GPU. Mỗi run phải ghi lại môi trường thực tế trong `environment.json`; bảng trên là target, không phải tuyên bố đã benchmark.
 
-Bộ pin dùng TensorFlow 2.19.0 vì host triển khai/test thực tế là Python 3.12.6. Đây là sai khác có chủ ý so với ưu tiên TensorFlow 2.15.x/Python 3.10-3.11 trong đề cương; phiên bản 2.19.0 đã được kiểm thử đồng bộ, và môi trường thật được công bố thay vì ghi phiên bản mong muốn nhưng không chạy.
+Bộ pin tự chọn theo Python: TensorFlow 2.19.0/h5py 3.16.0 cho Python 3.10-3.12 và TensorFlow 2.21.0/h5py 3.14.0 cho Python 3.13 của Colab. Đây là sai khác có chủ ý so với ưu tiên TensorFlow 2.15.x/Python 3.10-3.11 trong đề cương; mỗi run vẫn ghi lại chính xác phiên bản thực tế trong artifact để bảo đảm khả năng tái lập.
 
 Khuyến nghị tối thiểu cho full experiment: 16 GB RAM, khoảng 15 GB dung lượng trống cho archive/dataset/artifact, và GPU có VRAM phù hợp nếu muốn giảm thời gian. CPU vẫn dùng được cho test, smoke và demo nhưng full training có thể lâu.
 
@@ -118,7 +118,11 @@ python -m pip install -r requirements-dev.txt
 python -m pip install -e .
 ```
 
-### Colab/WSL2 - huấn luyện GPU
+### Google Colab - huấn luyện GPU
+
+Mở `CrackSpot.ipynb` và chạy tuần tự từ đầu. Notebook sẽ tự clone repository, nâng cấp công cụ cài đặt và chọn đúng TensorFlow theo phiên bản Python; không tạo virtual environment trong Colab.
+
+### WSL2 - huấn luyện GPU
 
 ```bash
 python -m venv .venv
