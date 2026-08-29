@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crackspot"
+version = "0.1.0"
+description = "Reproducible MobileNetV2 surface-crack classification and Grad-CAM demo"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { text = "MIT" }
+authors = [
+  { name = "CrackSpot - DHKHMT19CTT Nhom 6" },
+]
+dependencies = [
+  "numpy==2.1.3",
+  "pandas==2.2.3",
+  "Pillow==11.3.0",
+  "PyYAML==6.0.3",
+  "scikit-learn==1.6.1",
+]
+
+[project.optional-dependencies]
+train = [
+  "tensorflow==2.19.0",
+  "h5py==3.16.0",
+  "matplotlib==3.10.9",
+  "seaborn==0.13.2",
+  "opencv-python-headless==4.11.0.86",
+  "pyarrow==25.0.1",
+  "psutil==7.0.0",
+]
+demo = [
+  "tensorflow==2.19.0",
+  "h5py==3.16.0",
+  "streamlit==1.49.1",
+  "matplotlib==3.10.9",
+]
+dev = [
+  "pytest==8.4.2",
+  "pytest-cov==6.3.0",
+  "ruff==0.12.12",
+]
+
+[project.scripts]
+crackspot-train = "crackspot.modeling.train:main"
+crackspot-evaluate = "crackspot.modeling.evaluate:main"
+crackspot-threshold = "crackspot.modeling.threshold:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers --strict-config"
+testpaths = ["tests"]
+markers = [
+  "integration: integration tests that may import TensorFlow or Streamlit",
+  "slow: tests that perform model training or expensive I/O",
+]
+filterwarnings = [
+  "ignore:__array__ implementation doesn't accept a copy keyword:DeprecationWarning:keras.src.backend.tensorflow.core",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.coverage.run]
+source = ["crackspot"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true

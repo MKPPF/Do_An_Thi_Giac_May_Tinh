@@ -1,0 +1,166 @@
+schema_version: 1
+project:
+  name: CrackSpot
+  task: binary_surface_crack_classification
+  artifact_root: artifacts
+
+seed: 42
+deterministic:
+  enabled: true
+  warn_only: true
+
+labels:
+  negative_name: Non-crack
+  negative_value: 0
+  positive_name: Crack
+  positive_value: 1
+
+data:
+  dataset_name: SDNET2018
+  raw_dir: data/raw/SDNET2018
+  manifest_dir: data/manifests
+  real_images_dir: data/external/real
+  image_size: [224, 224]
+  expected_archive_md5: 677411e784f194422c90f52d9ed0d7c6
+  max_bytes: 10485760
+  max_pixels: 25000000
+  allowed_formats: [JPEG, PNG]
+  group_regex: null
+  group_map: null
+  group_rule_verified: false
+  fail_without_verified_group: true
+  require_source_group: true
+  split_ratios:
+    train: 0.70
+    validation: 0.15
+    test: 0.15
+  stratify_columns: [label, surface]
+  duplicate_audit:
+    exact_sha256: true
+    perceptual_hash: true
+    perceptual_hash_is_not_group_replacement: true
+
+pipeline:
+  loader: tf.data
+  image_size: [224, 224]
+  channels: 3
+  batch_size: 32
+  preprocessing: mobilenet_v2.preprocess_input
+  cache: false
+  prefetch: autotune
+  augmentation:
+    enabled: false
+    horizontal_flip_probability: 0.5
+    max_rotation_degrees: 15
+    brightness_delta: 0.15
+    contrast_delta: 0.15
+    train_only: true
+  class_weight:
+    enabled: true
+    strategy: balanced
+    source_split: train
+
+model:
+  architecture: MobileNetV2
+  weights: imagenet
+  include_top: false
+  input_shape: [224, 224, 3]
+  pooling: global_average
+  dropout: 0.30
+  output_units: 1
+  output_activation: sigmoid
+  loss: binary_crossentropy
+  gradcam_layer: out_relu
+  freeze_batch_normalization: true
+
+training:
+  optimizer: Adam
+  monitor: val_loss
+  checkpoint_monitor: val_loss
+  checkpoint_mode: min
+  default_threshold: 0.50
+  head:
+    enabled: true
+    max_epochs: 20
+    learning_rate: 0.001
+  fine_tune:
+    enabled: true
+    max_epochs: 30
+    unfreeze_from: null
+    learning_rate: 0.0001
+  callbacks:
+    early_stopping:
+      enabled: true
+      monitor: val_loss
+      mode: min
+      patience: 5
+      restore_best_weights: true
+    model_checkpoint:
+      enabled: true
+      monitor: val_loss
+      mode: min
+      save_best_only: true
+      save_full_model: true
+    reduce_lr_on_plateau:
+      enabled: true
+      monitor: val_loss
+      mode: min
+      factor: 0.2
+      patience: 2
+      min_learning_rate: 0.0000001
+
+evaluation:
+  threshold: 0.50
+  positive_label: 1
+  report_metrics:
+    - accuracy
+    - precision_crack
+    - recall_crack
+    - f1_crack
+    - macro_average
+    - confusion_matrix_raw
+    - confusion_matrix_normalized
+  qualitative_gradcam_groups: [true_positive, true_negative, false_positive, false_negative]
+  test_policy:
+    locked_until_selection_complete: true
+    one_final_evaluation_per_checkpoint: true
+  latency:
+    target_seconds_per_image: 5.0
+    warmup_runs: 10
+    measured_runs: 100
+    statistics: [mean, median, p50, p95]
+
+artifacts:
+  immutable_run_directory: true
+  forbid_overwrite: true
+  smoke_root: artifacts/smoke
+  report_root: artifacts/report
+  verification_root: artifacts/verification
+  model_filename: model.keras
+  metadata_filename: model.metadata.json
+  required_metadata:
+    - run_id
+    - model_version
+    - threshold
+    - input_size
+    - preprocessing
+    - label_mapping
+    - gradcam_layer
+    - tensorflow_version
+    - model_sha256
+    - manifest_sha256
+
+demo:
+  model_path: models/crackspot.keras
+  metadata_path: models/crackspot.metadata.json
+  model_path_env: CRACKSPOT_MODEL_PATH
+  metadata_path_env: CRACKSPOT_METADATA_PATH
+  process_upload_in_memory: true
+  persist_uploads: false
+  allowed_extensions: [jpg, jpeg, png]
+
+environment_target:
+  python: "3.12"
+  tensorflow: "2.19.0"
+  windows_native_accelerator: CPU
+  gpu_training: Colab_or_WSL2

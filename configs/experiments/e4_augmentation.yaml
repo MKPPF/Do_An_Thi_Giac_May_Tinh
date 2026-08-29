@@ -1,0 +1,48 @@
+defaults:
+  - ../base.yaml
+
+experiment:
+  id: E4
+  name: e4_augmentation
+  slug: e4_augmentation
+  seed: 42
+  description: Chọn E2/E3 chỉ theo validation, sau đó chạy cấu hình thắng với augmentation đã khóa.
+  valid_for_report_requires_verified_group_split: true
+
+selection:
+  candidates: [e2_finetune_basic, e3_finetune_deep]
+  split: validation
+  primary_metric: val_loss
+  mode: min
+  forbid_test_access: true
+  decision_artifact: model_selection.json
+  resolve_training_from_winner: true
+  forbid_unresolved_run: true
+
+pipeline:
+  augmentation:
+    enabled: true
+    horizontal_flip_probability: 0.5
+    max_rotation_degrees: 15
+    brightness_delta: 0.15
+    contrast_delta: 0.15
+    train_only: true
+
+training:
+  default_threshold: 0.50
+  # unfreeze_from và fine-tune LR được copy từ cấu hình E2/E3 thắng vào
+  # config snapshot của run; không mặc định trước một kết quả chưa đo.
+  fine_tune:
+    enabled: true
+    inherit_from_model_selection: true
+    max_epochs: 30
+    unfreeze_from: null
+    learning_rate: null
+
+model:
+  freeze_backbone: false
+  freeze_batch_normalization: true
+
+evaluation:
+  threshold: 0.50
+  test_threshold: 0.50

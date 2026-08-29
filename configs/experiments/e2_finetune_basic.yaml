@@ -1,0 +1,36 @@
+defaults:
+  - ../base.yaml
+
+experiment:
+  id: E2
+  name: e2_finetune_basic
+  slug: e2_finetune_basic
+  seed: 42
+  description: Huấn luyện head rồi fine-tune từ block_14_expand; BatchNormalization frozen.
+  valid_for_report_requires_verified_group_split: true
+
+pipeline:
+  augmentation:
+    enabled: false
+
+training:
+  default_threshold: 0.50
+  head:
+    enabled: true
+    max_epochs: 20
+    learning_rate: 0.001
+  fine_tune:
+    enabled: true
+    max_epochs: 30
+    unfreeze_from: block_14_expand
+    require_layer_exists: true
+    record_trainable_layer_count: true
+    learning_rate: 0.0001
+
+model:
+  freeze_backbone: false
+  freeze_batch_normalization: true
+
+evaluation:
+  threshold: 0.50
+  test_threshold: 0.50

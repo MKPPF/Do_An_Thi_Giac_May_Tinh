@@ -1,0 +1,33 @@
+defaults:
+  - ../base.yaml
+
+experiment:
+  id: E1
+  name: e1_baseline
+  slug: e1_baseline
+  seed: 42
+  description: Backbone MobileNetV2 frozen; chỉ huấn luyện classification head.
+  valid_for_report_requires_verified_group_split: true
+
+pipeline:
+  augmentation:
+    enabled: false
+
+training:
+  default_threshold: 0.50
+  head:
+    enabled: true
+    max_epochs: 20
+    learning_rate: 0.001
+  fine_tune:
+    enabled: false
+    max_epochs: 0
+    unfreeze_from: null
+
+model:
+  freeze_backbone: true
+  freeze_batch_normalization: true
+
+evaluation:
+  threshold: 0.50
+  test_threshold: 0.50

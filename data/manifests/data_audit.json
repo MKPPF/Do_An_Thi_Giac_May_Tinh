@@ -1,0 +1,287 @@
+{
+  "class_distribution": {
+    "0": 47608,
+    "1": 8484
+  },
+  "created_utc": "2026-08-29T07:46:38.313256+00:00",
+  "dataset_root": "D:\\Đồ án\\CrackSpot\\data\\raw\\SDNET2018",
+  "dimensions": {
+    "256x256": 56092
+  },
+  "exact_duplicates_sha256": {
+    "duplicate_groups": 13,
+    "examples": [
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/UD/7053-36.jpg",
+          "D/UD/7053-36_2.jpg"
+        ],
+        "sha256": "032298f2b453670ffcd9d86576418f789bc268e75f9ed8b7786f4d682d79eb63"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/CD/7039-113.jpg",
+          "D/CD/7039-113_2.jpg"
+        ],
+        "sha256": "100ed5c4918167180792a76addd82da57a57ee493ba46c1eb9ddc7f83ed0eadf"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/CD/7039-111.jpg",
+          "D/CD/7039-111_2.jpg"
+        ],
+        "sha256": "165edba54700186384701f45fa80f160aed08f7d3f4503a4e6795ff0b1060bfa"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/UD/7053-89.jpg",
+          "D/UD/7053-89_2.jpg"
+        ],
+        "sha256": "2f0a7e57a7864e541e997b7b2a3042ace6f16b045cad3621ac7123c498606f57"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/UD/7053-90.jpg",
+          "D/UD/7053-90_2.jpg"
+        ],
+        "sha256": "3792950659aa16111cef63e82bad69c557ac891738b14ec97b2a156a1d90641d"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/CD/7039-110.jpg",
+          "D/CD/7039-110_2.jpg"
+        ],
+        "sha256": "798408497ea706741a43afacf747ecfdc829ec280919e581d0fd1e4494ffd869"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/UD/7053-54.jpg",
+          "D/UD/7053-54_2.jpg"
+        ],
+        "sha256": "a434807b5f462d05696c1a826c998e094764bd1f9c074d25d85cad167ee29567"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/CD/7039-112.jpg",
+          "D/UD/7039-112_2.jpg"
+        ],
+        "sha256": "b3ace75a69b5c5a28695dd9dcaddfa3b2efbf88ad533773dc1e0169a9f85520b"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/UD/7053-18.jpg",
+          "D/UD/7053-18_2.jpg"
+        ],
+        "sha256": "b7e4344e2015390731f17a7b6861b932f9a7c6251375eaae54fed2d1dcf0d9af"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "W/CW/7074-105.jpg",
+          "W/UW/7074-105_2.jpg"
+        ],
+        "sha256": "b85d1a85d3f5609e4d76cdfc2e21c064295ca0e0b688829764f836bd63a99bca"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/UD/7053-53.jpg",
+          "D/UD/7053-53_2.jpg"
+        ],
+        "sha256": "bd3d443496763b8fc06c410bf8ea4ffdd30081109035e5d7760638c68da13319"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/UD/7053-35.jpg",
+          "D/UD/7053-35_2.jpg"
+        ],
+        "sha256": "d790a1e7fb4f24c028a01783c3972110c262b950585813eaefd2e5da4fce3057"
+      },
+      {
+        "count": 2,
+        "relative_paths": [
+          "D/UD/7053-17.jpg",
+          "D/UD/7053-17_2.jpg"
+        ],
+        "sha256": "e7aa7adc45516fac870e8d60b56587e1f53ca0fc08df32e7305b190a6e2aa111"
+      }
+    ],
+    "examples_truncated": false,
+    "images_in_duplicate_groups": 26
+  },
+  "formats": {
+    "JPEG": 56092
+  },
+  "invalid_files": [],
+  "manifest_canonical_sha256": "3b2acbaddb5431726c08bc4562d3f515210f0827fbbc057e1c08c9dd70369f5f",
+  "notes": [
+    "Equal dHash values are near-duplicate candidates for human review, not proof of common source.",
+    "Perceptual hashing never substitutes for a verified source_group map/rule."
+  ],
+  "perceptual_hash_candidates": {
+    "duplicate_groups": 15,
+    "examples": [
+      {
+        "count": 5,
+        "perceptual_hash": "0000000000000000",
+        "relative_paths": [
+          "P/CP/050-103.jpg",
+          "P/UP/001-13.jpg",
+          "P/UP/002-8.jpg",
+          "P/UP/050-85.jpg",
+          "P/UP/071-139.jpg"
+        ]
+      },
+      {
+        "count": 4,
+        "perceptual_hash": "ffffffffffffffff",
+        "relative_paths": [
+          "P/UP/029-52.jpg",
+          "P/UP/068-156.jpg",
+          "P/UP/076-207.jpg",
+          "P/UP/080-106.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "116cd3e94a4949d9",
+        "relative_paths": [
+          "D/UD/7053-35.jpg",
+          "D/UD/7053-35_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "1357ad3b9b965e8f",
+        "relative_paths": [
+          "D/UD/7053-18.jpg",
+          "D/UD/7053-18_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "1949c99ab64c89bb",
+        "relative_paths": [
+          "D/CD/7039-110.jpg",
+          "D/CD/7039-110_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "329796b6a6acb8b6",
+        "relative_paths": [
+          "D/UD/7053-53.jpg",
+          "D/UD/7053-53_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "3656999e5465efd4",
+        "relative_paths": [
+          "D/UD/7053-17.jpg",
+          "D/UD/7053-17_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "51399d1fcbd29a8b",
+        "relative_paths": [
+          "D/UD/7053-54.jpg",
+          "D/UD/7053-54_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "8e54133d4869eb27",
+        "relative_paths": [
+          "D/UD/7053-90.jpg",
+          "D/UD/7053-90_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "92b4a5b82869b3b7",
+        "relative_paths": [
+          "D/CD/7039-113.jpg",
+          "D/CD/7039-113_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "c430303082612090",
+        "relative_paths": [
+          "D/CD/7039-112.jpg",
+          "D/UD/7039-112_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "c4cc9cd8b95be5c3",
+        "relative_paths": [
+          "D/CD/7039-111.jpg",
+          "D/CD/7039-111_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "cfc9c95f3addd257",
+        "relative_paths": [
+          "D/UD/7053-36.jpg",
+          "D/UD/7053-36_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "e4b413da5953d35f",
+        "relative_paths": [
+          "W/CW/7074-105.jpg",
+          "W/UW/7074-105_2.jpg"
+        ]
+      },
+      {
+        "count": 2,
+        "perceptual_hash": "ed665d19ac117973",
+        "relative_paths": [
+          "D/UD/7053-89.jpg",
+          "D/UD/7053-89_2.jpg"
+        ]
+      }
+    ],
+    "examples_truncated": false,
+    "images_in_duplicate_groups": 35
+  },
+  "schema_version": 1,
+  "source_modes": {
+    "RGB": 56092
+  },
+  "surface_class_distribution": {
+    "D|0": 11595,
+    "D|1": 2025,
+    "P|0": 21726,
+    "P|1": 2608,
+    "W|0": 14287,
+    "W|1": 3851
+  },
+  "surface_distribution": {
+    "D": 13620,
+    "P": 24334,
+    "W": 18138
+  },
+  "totals": {
+    "discovered": 56092,
+    "invalid": 0,
+    "source_group_verified_rows": 56092,
+    "source_groups": 230,
+    "valid": 56092
+  }
+}

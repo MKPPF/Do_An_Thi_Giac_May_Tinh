@@ -1,0 +1,27 @@
+{
+  "artifact_sha256": {
+    "conflict_report.json": "98d99888576687f95680c42129d8727ac7b2fdd8e5bcde0449c349e5366f77fa",
+    "conflict_rows.csv": "e9be146bebfd0dc09d860a0a59d21a7f96d13b5829160cbcb924c1c46cfaf505",
+    "manifest.csv": "dd90fe30a4b1f8b213253d26e996dfd50a87f66c3ca4ffe03155470df30769cf",
+    "manifest_hashes.json": "694d15d7b6c8d37d5e81278c8a22fb2732576bcea7a1498e4241699669cc18e2",
+    "parent_manifest.csv": "3cd055e14518341b2bd6f623546d258c5ff303720966c485263f99c199556055",
+    "pre_split_manifest.csv": "a5e37042660f7d42ac8e526545e111beb020d53e76d9ecffbb8d8d2228ac4b2b",
+    "split_audit.json": "0afa2af4e2030d03a07d4f86484bc5452bd479a6a5a861084caeea119dd80abc",
+    "test.csv": "898a0a36883e61d2af520989c8826314b76740f0d15b74ad0d3df656a67ffd72",
+    "train.csv": "9f20f5b83b49be32fbfea4e160c599117d6219f25d8374ccae9f18b7f71bbcef",
+    "validation.csv": "f1dc5373edccb9ec19cf4718eda3e1ba144497408ba277eb0f38be7cddff4963"
+  },
+  "artifact_type": "locked_official_split_completion",
+  "completed_utc": "2026-08-29T13:23:29.605423+00:00",
+  "immutable": true,
+  "inventory_sha256": "694d15d7b6c8d37d5e81278c8a22fb2732576bcea7a1498e4241699669cc18e2",
+  "manifest_sha256": "b38302d62547fb20f264b811f38f7031cf1b8d4c8a21f9db15d4dc39699a3da7",
+  "ratios": {
+    "test": 0.15,
+    "train": 0.7,
+    "validation": 0.15
+  },
+  "schema_version": 2,
+  "seed": 42,
+  "status": "LOCKED_SPLIT_COMPLETE"
+}

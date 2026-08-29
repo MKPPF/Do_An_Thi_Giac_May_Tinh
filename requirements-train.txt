@@ -1,0 +1,8 @@
+-r requirements.txt
+
+# Training, evaluation, audit and reporting.
+matplotlib==3.10.9
+seaborn==0.13.2
+pyarrow==25.0.1
+psutil==7.0.0
+opencv-python-headless==4.11.0.86

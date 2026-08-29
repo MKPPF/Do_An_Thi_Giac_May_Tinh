@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Nếu sử dụng CrackSpot, vui lòng trích dẫn phần mềm này và SDNET2018 theo DATA_CARD.md."
+title: "CrackSpot: A CNN-based Surface Crack Detection System"
+type: software
+version: 0.1.0
+date-released: 2026-08-29
+authors:
+  - family-names: "Lê"
+    given-names: "Sỹ Hùng"
+    affiliation: "Trường Đại học Công nghiệp TP. Hồ Chí Minh"
+license: MIT
+abstract: >-
+  Hệ thống phân loại ảnh bề mặt Crack/Non-crack bằng MobileNetV2 transfer
+  learning, kèm quy trình thực nghiệm tái lập và trực quan hóa Grad-CAM.
+keywords:
+  - crack detection
+  - computer vision
+  - MobileNetV2
+  - transfer learning
+  - Grad-CAM
+preferred-citation:
+  type: software
+  title: "CrackSpot: A CNN-based Surface Crack Detection System"
+  version: 0.1.0
+  year: 2026
+  authors:
+    - family-names: "Lê"
+      given-names: "Sỹ Hùng"
+      affiliation: "Trường Đại học Công nghiệp TP. Hồ Chí Minh"
+notes: >-
+  Trước khi phát hành chính thức, bổ sung URL repository thật và đầy đủ thành
+  viên nhóm/MSSV nếu có.

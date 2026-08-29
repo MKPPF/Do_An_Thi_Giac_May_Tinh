@@ -1,0 +1,57 @@
+defaults:
+  - ../base.yaml
+
+experiment:
+  id: E5
+  name: e5_threshold
+  slug: e5_threshold
+  seed: 42
+  description: Threshold tuning và đánh giá ảnh thực tế; không huấn luyện model mới.
+  is_new_model: false
+
+model_source:
+  experiment: E4
+  checkpoint: best
+  require_checkpoint_sha256: true
+
+training:
+  enabled: false
+  head:
+    enabled: false
+  fine_tune:
+    enabled: false
+
+threshold_tuning:
+  split: validation
+  forbid_test_manifest: true
+  objective: f1_crack
+  mode: max
+  search:
+    strategy: unique_validation_probabilities_plus_0_0_5_1
+    minimum: 0.00
+    maximum: 1.00
+  tie_break_order:
+    - recall_crack_descending
+    - distance_to_0_5_ascending
+    - threshold_ascending
+  lock_before_test: true
+
+selection_lock:
+  output: selection_complete.json
+  required_hashes:
+    - checkpoint_sha256
+    - config_sha256
+    - manifest_sha256
+  final_evaluation_must_refuse_if_missing: true
+  final_evaluation_must_refuse_hash_mismatch: true
+
+evaluation:
+  threshold: 0.50
+  compare_thresholds:
+    - 0.50
+    - tuned_validation_threshold
+  state_accuracy_target_threshold_explicitly: true
+  real_images:
+    enabled: true
+    manifest_required: true
+    keep_separate_from_standard_test: true

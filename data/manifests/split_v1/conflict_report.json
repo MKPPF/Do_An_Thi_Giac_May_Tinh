@@ -1,0 +1,121 @@
+{
+  "artifact_type": "pre_split_exact_label_conflict_curation",
+  "artifacts": {
+    "cleaned_manifest": {
+      "canonical_sha256": "2ffb560a49aadfe475129ca56b0ae90741c37913a4657dd60cd51839cea880c7",
+      "file_sha256": "a5e37042660f7d42ac8e526545e111beb020d53e76d9ecffbb8d8d2228ac4b2b",
+      "filename": "pre_split_manifest.csv",
+      "rows": 56088
+    },
+    "conflict_rows_csv": {
+      "file_sha256": "e9be146bebfd0dc09d860a0a59d21a7f96d13b5829160cbcb924c1c46cfaf505",
+      "filename": "conflict_rows.csv",
+      "rows": 4
+    }
+  },
+  "conflict_groups": [
+    {
+      "exclusion_reason": "exact_sha256_group_has_conflicting_labels",
+      "labels": [
+        0,
+        1
+      ],
+      "row_count": 2,
+      "rows": [
+        {
+          "exclusion_reason": "exact_sha256_group_has_conflicting_labels",
+          "label": 1,
+          "relative_path": "D/CD/7039-112.jpg",
+          "source_group": "7039",
+          "surface": "D"
+        },
+        {
+          "exclusion_reason": "exact_sha256_group_has_conflicting_labels",
+          "label": 0,
+          "relative_path": "D/UD/7039-112_2.jpg",
+          "source_group": "7039",
+          "surface": "D"
+        }
+      ],
+      "sha256": "b3ace75a69b5c5a28695dd9dcaddfa3b2efbf88ad533773dc1e0169a9f85520b"
+    },
+    {
+      "exclusion_reason": "exact_sha256_group_has_conflicting_labels",
+      "labels": [
+        0,
+        1
+      ],
+      "row_count": 2,
+      "rows": [
+        {
+          "exclusion_reason": "exact_sha256_group_has_conflicting_labels",
+          "label": 1,
+          "relative_path": "W/CW/7074-105.jpg",
+          "source_group": "7074",
+          "surface": "W"
+        },
+        {
+          "exclusion_reason": "exact_sha256_group_has_conflicting_labels",
+          "label": 0,
+          "relative_path": "W/UW/7074-105_2.jpg",
+          "source_group": "7074",
+          "surface": "W"
+        }
+      ],
+      "sha256": "b85d1a85d3f5609e4d76cdfc2e21c064295ca0e0b688829764f836bd63a99bca"
+    }
+  ],
+  "counts": {
+    "cleaned_rows": 56088,
+    "contradictory_exact_hash_groups": 2,
+    "exact_duplicate_groups_before_curation": 13,
+    "exact_duplicate_rows_before_curation": 26,
+    "excluded_labels": {
+      "0": 2,
+      "1": 2
+    },
+    "excluded_rows": 4,
+    "excluded_surfaces": {
+      "D": 2,
+      "W": 2
+    },
+    "labels_after_curation": {
+      "0": 47606,
+      "1": 8482
+    },
+    "labels_before_curation": {
+      "0": 47608,
+      "1": 8484
+    },
+    "parent_rows": 56092,
+    "retained_same_label_exact_duplicate_groups": 11,
+    "retained_same_label_exact_duplicate_rows": 22,
+    "source_groups_after_curation": 230,
+    "source_groups_before_curation": 230
+  },
+  "created_utc": "2026-08-29T08:01:31.281144+00:00",
+  "immutable": true,
+  "immutable_protocol": "Archive this directory with the split evidence. Do not delete and recreate it after viewing validation or test results.",
+  "parent_manifest": {
+    "canonical_sha256": "3b2acbaddb5431726c08bc4562d3f515210f0827fbbc057e1c08c9dd70369f5f",
+    "file_sha256": "3cd055e14518341b2bd6f623546d258c5ff303720966c485263f99c199556055",
+    "path": "D:\\Đồ án\\CrackSpot\\data\\manifests\\audit_manifest.csv",
+    "rows": 56092
+  },
+  "policy": {
+    "action": "Before splitting, exclude every row in every exact SHA-256 group whose audited labels disagree.",
+    "exclusion_reason": "exact_sha256_group_has_conflicting_labels",
+    "labels_rewritten": false,
+    "same_label_exact_duplicates": "Retain unchanged; create_group_splits links their source groups into one allocation unit.",
+    "test_set_used_for_decision": false
+  },
+  "schema_version": 1,
+  "validation": {
+    "all_parent_rows_accounted_for": true,
+    "all_source_groups_nonblank_and_verified": true,
+    "contradictory_hash_groups_after_curation": 0,
+    "only_contradictory_hash_groups_excluded": true,
+    "same_label_exact_duplicates_retained": true,
+    "split_assignments_present_during_curation": false
+  }
+}

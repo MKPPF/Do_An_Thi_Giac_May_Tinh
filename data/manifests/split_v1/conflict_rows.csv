@@ -1,0 +1,5 @@
+exact_sha256,relative_path,label,surface,source_group,source_group_verified,hash_group_row_count,conflicting_labels,exclusion_reason
+b3ace75a69b5c5a28695dd9dcaddfa3b2efbf88ad533773dc1e0169a9f85520b,D/CD/7039-112.jpg,1,D,7039,True,2,0|1,exact_sha256_group_has_conflicting_labels
+b3ace75a69b5c5a28695dd9dcaddfa3b2efbf88ad533773dc1e0169a9f85520b,D/UD/7039-112_2.jpg,0,D,7039,True,2,0|1,exact_sha256_group_has_conflicting_labels
+b85d1a85d3f5609e4d76cdfc2e21c064295ca0e0b688829764f836bd63a99bca,W/CW/7074-105.jpg,1,W,7074,True,2,0|1,exact_sha256_group_has_conflicting_labels
+b85d1a85d3f5609e4d76cdfc2e21c064295ca0e0b688829764f836bd63a99bca,W/UW/7074-105_2.jpg,0,W,7074,True,2,0|1,exact_sha256_group_has_conflicting_labels

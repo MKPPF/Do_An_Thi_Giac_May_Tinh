@@ -1,0 +1,10 @@
+# Runtime/demo pins for Python 3.12 and TensorFlow 2.19.0.
+# Native Windows is CPU-only; use WSL2/Colab for GPU training.
+tensorflow==2.19.0
+numpy==2.1.3
+h5py==3.16.0
+Pillow==11.3.0
+PyYAML==6.0.3
+pandas==2.2.3
+scikit-learn==1.6.1
+streamlit==1.49.1

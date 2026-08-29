@@ -1,0 +1,6 @@
+-r requirements-train.txt
+
+# Test and static quality checks.
+pytest==8.4.2
+pytest-cov==6.3.0
+ruff==0.12.12
