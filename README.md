@@ -80,7 +80,7 @@ CrackSpot/
 
 Mở [`CrackSpot.ipynb`](CrackSpot.ipynb) bằng VS Code/Jupyter và chạy từ trên xuống. Chỉ cần sửa cell **THAM SỐ ĐIỀU KHIỂN**; các cờ `DO_*` mặc định đều tắt nên không tự train hay mở final test. Notebook là bảng điều khiển duy nhất, còn `src/crackspot` và `scripts/` là engine để tránh lặp logic.
 
-Trên Colab, mở chính file `CrackSpot.ipynb`; URL repository đã được cấu hình sẵn. Bật `CLONE_REPOSITORY_IN_COLAB`, `INSTALL_DEPENDENCIES` và `DO_DOWNLOAD_SDNET2018`, sau đó chạy từ trên xuống. Notebook clone source/locked manifests vào `/content/CrackSpot`; archive/ảnh SDNET2018 không đẩy lên Git mà được tải từ nguồn chính thức, xác minh MD5 rồi giải nén trong runtime.
+Trên Colab, mở chính file `CrackSpot.ipynb`; URL repository và chế độ clone/cài dependency tự động đã được cấu hình sẵn. Chỉ cần bật `DO_DOWNLOAD_SDNET2018`, sau đó chạy từ trên xuống. Notebook clone source/locked manifests vào `/content/CrackSpot`; archive/ảnh SDNET2018 không đẩy lên Git mà được tải từ nguồn chính thức, xác minh MD5 rồi giải nén trong runtime. `INSTALL_DEPENDENCIES=None` nghĩa là tự cài trên Colab và không tự cài ở local.
 
 Cell inventory hiển thị toàn bộ tệp source/config/docs/manifests, trạng thái Git, số lượng ảnh trong sáu thư mục nguồn và preview `train.csv`/`validation.csv`/`test.csv`. Notebook không in 56.088 tên ảnh vì output đó quá lớn và có thể làm treo trình duyệt.
 

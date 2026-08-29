@@ -45,7 +45,7 @@ GPU WSL2 cần driver NVIDIA phía Windows và môi trường tương thích Ten
 
 ## Google Colab
 
-Mở `CrackSpot.ipynb`, chọn GPU nếu có; URL repository đã được cấu hình sẵn. Bật `CLONE_REPOSITORY_IN_COLAB`, `INSTALL_DEPENDENCIES` và `DO_DOWNLOAD_SDNET2018`, rồi chạy từ trên xuống. Notebook clone source/locked manifests vào `/content/CrackSpot`, sau đó tải và xác minh dataset thật. Artifact có thể sao lưu sang Drive sau run; không nên train trực tiếp trên cây nhiều file ảnh trong Drive vì I/O ngẫu nhiên chậm.
+Mở `CrackSpot.ipynb`, chọn GPU nếu có; URL repository và chế độ clone/cài dependency tự động đã được cấu hình sẵn. Bật `DO_DOWNLOAD_SDNET2018`, rồi chạy từ trên xuống. Notebook clone source/locked manifests vào `/content/CrackSpot`, sau đó tải và xác minh dataset thật. Artifact có thể sao lưu sang Drive sau run; không nên train trực tiếp trên cây nhiều file ảnh trong Drive vì I/O ngẫu nhiên chậm.
 
 Kiểm tra phiên bản:
 
