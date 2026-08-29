@@ -19,3 +19,6 @@
 *.h5 filter=lfs diff=lfs merge=lfs -text
 *.onnx filter=lfs diff=lfs merge=lfs -text
 *.tflite filter=lfs diff=lfs merge=lfs -text
+
+# Locked manifests are byte-hashed evidence; Git must never normalize EOL bytes.
+data/manifests/** binary
