@@ -20,7 +20,9 @@ py -3.12 -m venv .venv
 python -m pip install --upgrade pip
 python -m pip install -r requirements-dev.txt
 python -m pip install -e .
+python -m ipykernel install --user --name crackspot --display-name "Python (CrackSpot)"
 python -c "import tensorflow as tf; print(tf.__version__); print(tf.config.list_physical_devices())"
+.\.venv\Scripts\jupyter-lab.exe CrackSpot.ipynb
 ```
 
 Nếu PowerShell chặn activate, có thể dùng trực tiếp:
@@ -32,12 +34,16 @@ Nếu PowerShell chặn activate, có thể dùng trực tiếp:
 
 ## WSL2/Linux
 
+Nếu WSL2 chưa được cài, mở PowerShell bằng quyền Administrator, chạy `wsl --install -d Ubuntu`, khởi động lại Windows và hoàn tất tạo user Ubuntu. Trong Ubuntu:
+
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements-dev.txt
+python -m pip install "tensorflow[and-cuda]==2.19.0"
 python -m pip install -e .
+python -m ipykernel install --user --name crackspot-wsl --display-name "Python (CrackSpot WSL GPU)"
 python -c "import tensorflow as tf; print(tf.__version__); print(tf.config.list_physical_devices())"
 ```
 

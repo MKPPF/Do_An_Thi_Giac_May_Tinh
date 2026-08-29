@@ -116,6 +116,16 @@ python -m pip install -e .
 ```powershell
 python -m pip install -r requirements-dev.txt
 python -m pip install -e .
+python -m ipykernel install --user --name crackspot --display-name "Python (CrackSpot)"
+```
+
+Mở `CrackSpot.ipynb`, chọn kernel **Python (CrackSpot)**, sau đó Restart Kernel và Run All. Windows native chạy TensorFlow bằng CPU; RTX không xuất hiện trong `tf.config.list_physical_devices("GPU")` là hành vi đúng của TensorFlow 2.19.
+
+Khởi động notebook local trực tiếp từ PowerShell:
+
+```powershell
+cd D:\Đồ án\CrackSpot
+.\.venv\Scripts\jupyter-lab.exe CrackSpot.ipynb
 ```
 
 ### Google Colab - huấn luyện GPU
@@ -124,12 +134,18 @@ Mở `CrackSpot.ipynb` và chạy tuần tự từ đầu. Notebook sẽ tự cl
 
 ### WSL2 - huấn luyện GPU
 
+Mở PowerShell bằng quyền Administrator, chạy `wsl --install -d Ubuntu`, khởi động lại Windows và tạo user Ubuntu. Sau đó chạy trong terminal Ubuntu:
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements-train.txt
+python -m pip install "tensorflow[and-cuda]==2.19.0"
+python -m pip install ipykernel==6.30.1
 python -m pip install -e .
+python -m ipykernel install --user --name crackspot-wsl --display-name "Python (CrackSpot WSL GPU)"
+python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 
 Kiểm tra TensorFlow thấy thiết bị nào:
