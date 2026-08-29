@@ -25,7 +25,7 @@ Trạng thái: `CODE` = đã có implementation nhưng còn thiếu bằng chứ
 | R19 | latency <=5s được đo trung thực | `benchmark.py`, `benchmark_inference.py` | `test_reporting_benchmark.py` | benchmark checkpoint/môi trường thật | CODE |
 | R20 | ảnh thực tế tách riêng | `real_images.py`, `evaluate_real_images.py` | guard schema/split được cài đặt | ảnh nhóm tự chụp + manifest + metrics riêng | BLOCKED_EXTERNAL |
 | R21 | run bất biến, provenance/hash/environment | `train.py`, `selection.py`, `evaluate.py`, utils | overwrite/hash/one-shot + interruption→resume tests; smoke provenance | run E1-E5 thật có Git commit | VERIFIED_CODE |
-| R22 | README/cards/notebook/handoff | root docs + `CrackSpot.ipynb` | JSON notebook hợp lệ; CLI commands đối chiếu `--help` | manual clean-copy/release review | CODE |
+| R22 | README/cards/notebook/handoff | root docs + standalone `CrackSpot.ipynb` | notebook 27 cell tự chứa code; default-path execution, real-image batch/model/fine-tune/Grad-CAM và Streamlit-source smoke pass | manual clean-copy/release review | VERIFIED_CODE |
 | R23 | báo cáo 35-45 trang và slide | handoff riêng | đối chiếu report_facts | report/slide final | BLOCKED_EXTERNAL |
 
 ## Bằng chứng Gate B hiện tại

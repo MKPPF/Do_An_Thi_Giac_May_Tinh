@@ -78,11 +78,11 @@ CrackSpot/
 
 ## Chạy bằng notebook chính
 
-Mở [`CrackSpot.ipynb`](CrackSpot.ipynb) bằng VS Code/Jupyter và chạy từ trên xuống. Chỉ cần sửa cell **THAM SỐ ĐIỀU KHIỂN**; các cờ `DO_*` mặc định đều tắt nên không tự train hay mở final test. Notebook là bảng điều khiển duy nhất, còn `src/crackspot` và `scripts/` là engine để tránh lặp logic.
+Mở [`CrackSpot.ipynb`](CrackSpot.ipynb) bằng VS Code/Jupyter và chạy từ trên xuống. Chỉ cần sửa cell **THAM SỐ ĐIỀU KHIỂN**; các cờ `DO_*` mặc định đều tắt nên không tự train hay mở final test. Notebook là bản triển khai độc lập: toàn bộ code tải/kiểm tra dữ liệu, pipeline, MobileNetV2, E1-E5, final test, Grad-CAM, benchmark, ảnh tự chụp và demo đều được trình bày trực tiếp trong các cell; notebook không import `crackspot` và không gọi `scripts/`.
 
-Trên Colab, mở chính file `CrackSpot.ipynb`; URL repository và chế độ clone/cài dependency tự động đã được cấu hình sẵn. Chỉ cần bật `DO_DOWNLOAD_SDNET2018`, sau đó chạy từ trên xuống. Notebook clone source/locked manifests vào `/content/CrackSpot`; archive/ảnh SDNET2018 không đẩy lên Git mà được tải từ nguồn chính thức, xác minh MD5 rồi giải nén trong runtime. `INSTALL_DEPENDENCIES=None` nghĩa là tự cài trên Colab và không tự cài ở local.
+Trên Colab, mở chính file `CrackSpot.ipynb`; URL repository và chế độ clone/cài dependency tự động đã được cấu hình sẵn. Chỉ cần bật `DO_DOWNLOAD_SDNET2018`, sau đó chạy từ trên xuống. Notebook clone repository để nhận locked manifests vào `/content/CrackSpot`; code chạy vẫn nằm trọn trong notebook. Archive/ảnh SDNET2018 không đẩy lên Git mà được tải từ nguồn chính thức, xác minh MD5 rồi giải nén trong runtime. `INSTALL_DEPENDENCIES=None` nghĩa là tự cài trên Colab và không tự cài ở local.
 
-Cell inventory hiển thị toàn bộ tệp source/config/docs/manifests, trạng thái Git, số lượng ảnh trong sáu thư mục nguồn và preview `train.csv`/`validation.csv`/`test.csv`. Notebook không in 56.088 tên ảnh vì output đó quá lớn và có thể làm treo trình duyệt.
+Notebook hiển thị bảng tổng hợp và preview riêng của `train.csv`/`validation.csv`/`test.csv`, đường dẫn tới từng CSV đầy đủ, số ảnh/source group theo split và audit zero path/group/hash leakage. Không in 56.088 tên ảnh vào output vì có thể làm treo trình duyệt; toàn bộ dòng vẫn xem được trực tiếp trong ba CSV hoặc DataFrame tương ứng.
 
 ## Môi trường mục tiêu
 
